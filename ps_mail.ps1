@@ -8,7 +8,7 @@ $Password = "ckuz khie yocw gxjk"
 # $Password = "vspr oypf rhcp jotl"
 
 # Set the number of iterations for the loop
-$iterations = 100
+$iterations = 10
 
 # Set the full path to the attachment file
 $attachmentPath = "$HOME\Downloads\Record.txt"
